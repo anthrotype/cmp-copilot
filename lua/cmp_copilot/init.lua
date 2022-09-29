@@ -10,6 +10,10 @@ source.get_keyword_pattern = function()
   return '.'
 end
 
+source.is_available = function()
+  return vim.g.copilot_enabled == 1
+end
+
 source.complete = function(self, params, callback)
   vim.fn['copilot#Complete'](function(result)
     callback({
